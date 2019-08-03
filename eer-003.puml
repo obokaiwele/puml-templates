@@ -1,0 +1,76 @@
+@startuml
+skinparam rectangle {
+  BackgroundColor DarkSeaGreen
+  FontStyle Bold
+  FontColor DarkGreen
+}
+
+skinparam usecase {
+  BackgroundColor Pink
+  FontStyle Bold
+  FontColor DarkRed
+}
+
+hide members
+hide methods
+hide stereotypes
+hide circle
+
+
+' Vehicle
+rectangle Vehicle
+Vehicle -- (Model)
+(Model) -- (ModelYear)
+(Model) -- (ModelName)
+Vehicle -- (VehicleType)
+Vehicle -- (Condition)
+Vehicle -- (Description)
+Vehicle -- (Mileage)
+Vehicle -- (Color)
+
+
+
+' Customer
+rectangle Customer
+usecase EmailAddress as customerEmailAddress
+usecase PhoneNumber as customerPhoneNumber
+usecase Address as customerAddress
+usecase PostalCode as customerPostalCode
+usecase State as customerState
+usecase Street as customerStreet
+usecase City as customerCity
+
+' Individual
+rectangle Individual
+Individual -- (DriverLicenseNumber)
+usecase Name as individualName
+usecase FirstName as individualFirstName
+usecase LastName as individualLastName
+
+' Business
+rectangle Business
+Business -- (BusinessIdNumber)
+Business -- (BusinessName)
+Business -- (PrimaryContact)
+(PrimaryContact) -- (PrimaryContactTitle)
+(PrimaryContact) -- (PrimaryContactName)
+
+' Manufacturer
+rectangle Manufacturer
+
+
+
+Customer -- Individual
+Customer -- Business
+Customer -- customerEmailAddress
+Customer -- customerPhoneNumber
+Customer -- customerAddress
+customerAddress -- customerPostalCode
+customerAddress -- customerState
+customerAddress -- customerCity
+customerAddress -- customerStreet
+
+
+Vehicle - Manufacturer
+
+@enduml

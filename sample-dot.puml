@@ -1,0 +1,17 @@
+@startdot
+digraph G { 
+  CustomerCustomerDemo -> CustomerDemographics;
+  CustomerCustomerDemo -> Customers;
+  Employees -> Employees;
+  EmployeeTerritories -> Employees;
+  EmployeeTerritories -> Territories;
+  Order Details -> Orders;
+  Order Details -> Products;
+  Orders -> Customers;
+  Orders -> Employees;
+  Orders -> Shippers;
+  Products -> Categories;
+  Products -> Suppliers;
+  Territories -> Region;
+} 
+@enddot

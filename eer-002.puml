@@ -1,0 +1,17 @@
+@startuml
+'http://plantuml.com/dot
+digraph EER {
+  Vehicle [shape=box]
+  Vehicle -> VIN
+  Vehicle -> Color
+  Vehicle -> Mileage
+  Vehicle -> Description
+  Vehicle -> Manufacturer
+  Vehicle -> Condition
+  Vehicle -> VehicleType
+  Vehicle -> Model
+  Model -> ModelYear
+  Model -> ModelName
+}
+
+@enduml

@@ -1,0 +1,109 @@
+@startuml
+
+' uncomment the line below if you're using computer with a retina display
+' skinparam dpi 300
+' !define Table(name,desc) class name as "desc" << (T,#FFAAAA) >>
+' we use bold for primary key
+' green color for unique
+' and underscore for not_null
+' !define primary_key(x) <b>x</b>
+' !define unique(x) <color:green>x</color>
+' !define not_null(x) <u>x</u>
+' other tags available:
+' <i></i>
+' <back:COLOR></color>, where color is a color name or html color code
+' (#FFAACC)
+' see: http://plantuml.com/classes.html#More
+
+
+!define Table(name) class name << (T, mistyrose) >>
+title EER Diagram
+
+hide members
+hide methods
+hide stereotypes
+' hide footbox
+hide circle
+' hide class circle
+' hide class methods
+
+skinparam class {
+  BackgroundColor PaleGreen
+  ArrowColor SeaGreen
+  BorderColor SpringGreen
+}
+skinparam Monochrome true
+skinparam ClassAttributeIconSize 0
+scale 2
+
+
+
+
+Table(Vehicle)
+' usecase LastName
+
+' class Vehicle
+' ' usecase VIN
+' Vehicle -- VIN
+' Vehicle -- Color
+' Vehicle -- Mileage
+' Vehicle -- Description
+' Vehicle -- Manufacturer
+' Vehicle -- Condition
+' Vehicle -- VehicleType
+' Vehicle -- Model
+' Model -- ModelYear
+' Model -- ModelName
+
+
+' class Customer
+' Customer -- EmailAddress
+' Customer -- PhoneNumber
+' Customer -- Address
+' Address -- PostalCode
+' Address -- State
+' Address -- Street
+' Address -- City
+
+
+
+' class Individual
+' Individual -- DriverLicenseNumber
+' Individual -- Name
+' Name -- FirstName
+' Name -- LastName
+
+
+' class Business
+' Business -- BusinessIdNumber
+' Business -- BusinessName
+' Business -- PrimaryContact
+' PrimaryContact -- PrimaryContactName
+' PrimaryContact -- PrimaryContactTitle
+
+
+' class Manufacturer
+' class ManufacturerRecall
+' class RepairWork
+' class SalessOrder
+' class LoggedInUser
+' class Vendor
+
+
+
+' Customer - Individual
+' Customer - Business
+
+
+
+' ' hide 
+
+' ' Table(user, "user\n(User in our system)") {
+' '   primary_key(id) INTEGER
+' '   not_null(unique(username)) VARCHAR[32]
+' '   not_null(password) VARCHAR[64]
+' ' }
+
+
+
+@enduml
